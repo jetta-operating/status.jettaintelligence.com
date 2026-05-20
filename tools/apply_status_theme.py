@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+from pathlib import Path
+import shutil
+
+
+EXPORT_DIR = Path("site/status-page/__sapper__/export")
+THEME_SOURCE = Path("assets/jetta-status-theme.css")
+THEME_TARGET = EXPORT_DIR / "jetta-status-theme.css"
+GLOBAL_CSS = EXPORT_DIR / "global.css"
+MARKER = "/* Jetta status theme */"
+
+
+def main() -> None:
+    if not EXPORT_DIR.exists():
+        raise SystemExit(f"missing generated site export: {EXPORT_DIR}")
+    if not THEME_SOURCE.exists():
+        raise SystemExit(f"missing theme source: {THEME_SOURCE}")
+    if not GLOBAL_CSS.exists():
+        raise SystemExit(f"missing generated global.css: {GLOBAL_CSS}")
+
+    theme = THEME_SOURCE.read_text()
+    shutil.copyfile(THEME_SOURCE, THEME_TARGET)
+
+    global_css = GLOBAL_CSS.read_text()
+    if MARKER not in global_css:
+        GLOBAL_CSS.write_text(f"{global_css.rstrip()}\n\n{MARKER}\n{theme}\n")
+
+    for html_path in EXPORT_DIR.rglob("*.html"):
+        html = html_path.read_text()
+        html = html.replace(
+            "href=https://status.jettaintelligence.com/themes/",
+            "href=/themes/",
+        )
+        html = html.replace(
+            "href=https://status.jettaintelligence.com/global.css",
+            "href=/global.css",
+        )
+        html_path.write_text(html)
+
+
+if __name__ == "__main__":
+    main()

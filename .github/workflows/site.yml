@@ -39,9 +39,7 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
       - name: Apply Jetta status theme
-        run: |
-          cp assets/jetta-status-theme.css site/status-page/__sapper__/export/jetta-status-theme.css
-          cat assets/jetta-status-theme.css >> site/status-page/__sapper__/export/global.css
+        run: python3 tools/apply_status_theme.py
       - uses: peaceiris/actions-gh-pages@v4
         name: GitHub Pages Deploy
         with:
