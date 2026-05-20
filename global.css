@@ -201,6 +201,8 @@ article .graph {
   opacity: var(--graph-opacity);
   filter: var(--graph-filter);
 }
+
+/* Jetta status theme */
 :root {
   --body-background-color: #f5f6ef;
   --body-text-color: #17211d;
@@ -408,3 +410,4 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
