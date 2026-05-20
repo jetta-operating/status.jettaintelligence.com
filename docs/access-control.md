@@ -7,20 +7,25 @@ status site.
 
 ## Current implementation state
 
-As of 2026-05-20, this repo has automation for the Cloudflare setup at
-`tools/configure_cloudflare_access.py`, but the live hostname is not proven
-gated until the verification command below shows a Cloudflare Access redirect
-or block.
+As of 2026-05-20, `status.jettaintelligence.com` is protected at the custom
+hostname by Cloudflare Access.
 
-Current observed public behavior before the Cloudflare gate is applied:
+Current verified behavior:
 
-- `status.jettaintelligence.com` is a CNAME to `jetta-operating.github.io`.
-- `https://status.jettaintelligence.com/` returns `200` from GitHub Pages.
-- The GitHub repository is public.
+- Cloudflare DNS has the status CNAME proxied through Cloudflare.
+- System DNS, default `dig`, `1.1.1.1`, and `8.8.8.8` resolve the hostname to
+  Cloudflare edge addresses.
+- `https://status.jettaintelligence.com/` returns a Cloudflare-managed access
+  block/redirect before site content loads.
+- Forced Cloudflare-edge probes return the Cloudflare Access login path.
 
-That means Cloudflare Access can protect the custom hostname once DNS is
-proxied, but it does not by itself make the public GitHub repository or raw
-GitHub history undiscoverable.
+Important boundary: Cloudflare Access protects the custom hostname. It does not
+by itself make the public GitHub repository, generated history files, or raw
+GitHub content undiscoverable if those remain public.
+
+If incognito ever loads the page without an Access challenge, treat that as a
+verification failure and run the strict check below. Incognito clears browser
+session state, not every DNS resolver cache or origin-bypass path.
 
 The status site is an Upptime static site. Upptime's generated website loads
 status data from the GitHub repository and raw GitHub content at runtime. That
@@ -158,7 +163,7 @@ Use this rule before adding sensitive content:
 Run these after applying Cloudflare Access:
 
 ```bash
-tools/configure_cloudflare_access.py --verify-only
+tools/configure_cloudflare_access.py --verify-only --strict
 curl -sSI https://status.jettaintelligence.com/ | sed -n '1,20p'
 curl -sSI https://status.jettaintelligence.com/history/jetta-intelligence-website/ | sed -n '1,20p'
 dig +short status.jettaintelligence.com CNAME
@@ -173,6 +178,15 @@ Expected signal:
 
 If the public URL still returns `HTTP/2 200` from `server: GitHub.com`, the
 custom domain is not yet protected.
+
+The repo verifier intentionally checks multiple layers:
+
+- public HTTP gate behavior,
+- macOS/Python system resolver output,
+- default `dig` output,
+- public resolver output from `1.1.1.1` and `8.8.8.8`,
+- forced Cloudflare-edge behavior using the Cloudflare IPs returned by public
+  resolvers.
 
 ## References
 

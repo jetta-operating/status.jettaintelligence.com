@@ -75,8 +75,14 @@ a clear owner/runbook path.
 The next useful improvement is a small owner/runbook table for each active
 monitor:
 
-| Monitor | Owner | Runbook | Escalation |
-|---|---|---|---|
-| TBD | TBD | TBD | TBD |
+| Monitor | Company scope | Owner | Runbook | Escalation |
+|---|---|---|---|---|
+| TBD | Greenmark / AIC / Jetta / Shared vendor | TBD | TBD | TBD |
 
 Keep this human-maintained until there is a reason to generate it.
+
+The first UI-facing use for `Company scope` should be filter tabs or a
+segmented control on the status page. Greenmark/Cerebro monitors belong under
+Greenmark; Jetta platform services belong under Jetta; AIC corporate surfaces
+belong under AIC; infrastructure and AI vendors belong under Shared vendors
+unless a single company clearly owns the dependency.

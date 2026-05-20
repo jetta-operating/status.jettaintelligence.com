@@ -51,6 +51,12 @@ Use this taxonomy when adding monitors or discussing status:
 The source config (`.upptimerc.yml`) is ordered using this taxonomy. See
 [`service-catalog.md`](./service-catalog.md) for the current monitor list.
 
+Future UI work should add company-scoped filtering so the same status plane can
+serve different operating audiences without making every asset feel globally
+Jetta-owned. In that model, Greenmark/Cerebro assets should appear under a
+Greenmark filter, AIC assets under AIC, Jetta platform assets under Jetta, and
+shared vendors under a shared/vendor filter.
+
 ## Status meanings
 
 Use these meanings when interpreting the page and writing incidents:

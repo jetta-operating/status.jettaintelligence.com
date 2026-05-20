@@ -5,11 +5,13 @@ External status page for Jetta-managed services and critical vendor dependencies
 - Public site target: https://status.jettaintelligence.com
 - Status repo: https://github.com/jetta-operating/status.jettaintelligence.com
 - Runtime: GitHub Actions + GitHub Pages via Upptime
+- Access: Cloudflare Access protects the custom hostname before content loads
 - Railway dependency: monitored by this repo, not used to host this status plane
 - Vendor dependencies: Vercel, OpenRouter, Claude/Anthropic, OpenAI/ChatGPT, Supabase, GitHub, and Railway
 - Theme: Jetta-branded Upptime theme in [`assets/jetta-status-theme.css`](./assets/jetta-status-theme.css)
 - Operating model: [`docs/operating-model.md`](./docs/operating-model.md)
 - Service catalog: [`docs/service-catalog.md`](./docs/service-catalog.md)
+- Status UI roadmap: [`docs/status-ui-roadmap.md`](./docs/status-ui-roadmap.md)
 - Access-control notes: [`docs/access-control.md`](./docs/access-control.md)
 - Board/security FAQ: [`docs/faq.md`](./docs/faq.md)
 
@@ -65,5 +67,6 @@ This repo intentionally monitors only public, non-secret health surfaces. Do not
 - Uptime checks run every 15 minutes.
 - Response time, graph, summary, and static site workflows can be run manually from GitHub Actions.
 - Incidents are tracked as GitHub Issues.
-- The custom domain requires a DNS `CNAME` for `status.jettaintelligence.com` pointing at GitHub Pages.
+- The custom domain uses a proxied Cloudflare DNS `CNAME` for `status.jettaintelligence.com` pointing at GitHub Pages as the origin.
+- Verify the access gate with `tools/configure_cloudflare_access.py --verify-only --strict`.
 - The org blocks default workflow write permissions; this repo uses a `GH_PAT` Actions secret. The token must include `repo` for status commits and `workflow` before running Upptime template-update automation.
