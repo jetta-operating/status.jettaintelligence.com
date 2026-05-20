@@ -8,6 +8,10 @@ import json
 EXPORT_DIR = Path("site/status-page/__sapper__/export")
 THEME_SOURCE = Path("assets/jetta-status-theme.css")
 THEME_TARGET = EXPORT_DIR / "jetta-status-theme.css"
+LOGO_SOURCE = Path("assets/logo/jetta-status-logo.svg")
+LOGO_192_SOURCE = Path("assets/logo/jetta-logo-192.png")
+LOGO_512_SOURCE = Path("assets/logo/jetta-logo-512.png")
+LOGO_TARGET = EXPORT_DIR / "jetta-status-logo.svg"
 GLOBAL_CSS = EXPORT_DIR / "global.css"
 SERVICE_WORKER = EXPORT_DIR / "service-worker.js"
 INDEX_HTML = EXPORT_DIR / "index.html"
@@ -37,6 +41,8 @@ def main() -> None:
         raise SystemExit(f"missing generated site export: {EXPORT_DIR}")
     if not THEME_SOURCE.exists():
         raise SystemExit(f"missing theme source: {THEME_SOURCE}")
+    if not LOGO_SOURCE.exists():
+        raise SystemExit(f"missing logo source: {LOGO_SOURCE}")
     if not GLOBAL_CSS.exists():
         raise SystemExit(f"missing generated global.css: {GLOBAL_CSS}")
     if not INDEX_HTML.exists():
@@ -44,6 +50,11 @@ def main() -> None:
 
     theme = THEME_SOURCE.read_text()
     shutil.copyfile(THEME_SOURCE, THEME_TARGET)
+    shutil.copyfile(LOGO_SOURCE, LOGO_TARGET)
+    if LOGO_192_SOURCE.exists():
+        shutil.copyfile(LOGO_192_SOURCE, EXPORT_DIR / "logo-192.png")
+    if LOGO_512_SOURCE.exists():
+        shutil.copyfile(LOGO_512_SOURCE, EXPORT_DIR / "logo-512.png")
 
     global_css = GLOBAL_CSS.read_text()
     theme_block = f"{MARKER}\n{theme}\n{END_MARKER}"
@@ -84,6 +95,14 @@ def main() -> None:
         html = html.replace(
             "href=https://status.jettaintelligence.com/jetta-status-theme.css",
             "href=/jetta-status-theme.css",
+        )
+        html = html.replace(
+            "https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg",
+            "/jetta-status-logo.svg",
+        )
+        html = html.replace(
+            "https://raw.githubusercontent.com/jetta-operating/status.jettaintelligence.com/master/assets/logo/jetta-status-logo.svg",
+            "/jetta-status-logo.svg",
         )
         html = html.replace(
             "href=https://status.jettaintelligence.com",
