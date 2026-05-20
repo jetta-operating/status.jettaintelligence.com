@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import shutil
+import re
 
 
 EXPORT_DIR = Path("site/status-page/__sapper__/export")
@@ -39,6 +40,13 @@ def main() -> None:
             "href=https://status.jettaintelligence.com/jetta-status-theme.css",
             "href=/jetta-status-theme.css",
         )
+        html = html.replace(
+            "href=https://status.jettaintelligence.com",
+            "href=/",
+        )
+        if "id=\"jetta-critical-theme\"" not in html:
+            inline_theme = f"<style id=\"jetta-critical-theme\">{theme}</style>"
+            html = re.sub(r"</head>", f"{inline_theme}</head>", html, count=1)
         html_path.write_text(html)
 
 
