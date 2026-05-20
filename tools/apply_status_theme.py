@@ -8,7 +8,24 @@ EXPORT_DIR = Path("site/status-page/__sapper__/export")
 THEME_SOURCE = Path("assets/jetta-status-theme.css")
 THEME_TARGET = EXPORT_DIR / "jetta-status-theme.css"
 GLOBAL_CSS = EXPORT_DIR / "global.css"
+SERVICE_WORKER = EXPORT_DIR / "service-worker.js"
 MARKER = "/* Jetta status theme */"
+SERVICE_WORKER_RESET = """
+self.addEventListener("install", (event) => {
+  self.skipWaiting();
+});
+
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+      .then(() => self.registration.unregister())
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener("fetch", () => {});
+""".strip()
 
 
 def main() -> None:
@@ -26,8 +43,14 @@ def main() -> None:
     if MARKER not in global_css:
         GLOBAL_CSS.write_text(f"{global_css.rstrip()}\n\n{MARKER}\n{theme}\n")
 
+    SERVICE_WORKER.write_text(f"{SERVICE_WORKER_RESET}\n")
+
     for html_path in EXPORT_DIR.rglob("*.html"):
         html = html_path.read_text()
+        html = html.replace(
+            "if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');",
+            "",
+        )
         html = html.replace(
             "href=https://status.jettaintelligence.com/themes/",
             "href=/themes/",
