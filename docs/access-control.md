@@ -59,6 +59,33 @@ go to Cloudflare's Access login page for **Jetta Service Status**, not to the
 login admin app. Both hostnames should stay as separate Access applications
 under the same Cloudflare team and the same intended identity policy.
 
+## Login page branding
+
+The shared Cloudflare Access login page should be lightly Jetta-branded while
+remaining visibly Cloudflare-managed. This reduces user confusion without
+turning the page into a custom-owned authentication surface.
+
+Current desired design:
+
+| Field | Value |
+|---|---|
+| Organization/header | `Jetta Operating access` |
+| Logo | `assets/logo/jetta-status-logo.svg` served from this repo's raw GitHub URL |
+| Background | Jetta charcoal, `#1f1f1f` |
+| Text | White, `#ffffff` |
+| Footer | `Use your approved company email to receive a one-time code. Protected by Cloudflare Access.` |
+
+Important boundary: Cloudflare applies this Access login-page design to the
+whole Zero Trust organization, not just the status page. That is acceptable
+because this Cloudflare team is being used as the Jetta-managed access layer.
+
+Apply or verify the design with:
+
+```bash
+tools/configure_cloudflare_access_login_design.py --use-clawdflare-vault
+tools/configure_cloudflare_access_login_design.py --use-clawdflare-vault --apply
+```
+
 Preferred user experience:
 
 1. User opens `https://status.jettaintelligence.com`.
