@@ -8,6 +8,8 @@ External status page for Jetta-managed services and critical vendor dependencies
 - Railway dependency: monitored by this repo, not used to host this status plane
 - Vendor dependencies: Vercel, OpenRouter, Claude/Anthropic, OpenAI/ChatGPT, Supabase, GitHub, and Railway
 - Theme: Jetta-branded Upptime theme in [`assets/jetta-status-theme.css`](./assets/jetta-status-theme.css)
+- Operating model: [`docs/operating-model.md`](./docs/operating-model.md)
+- Service catalog: [`docs/service-catalog.md`](./docs/service-catalog.md)
 - Access-control notes: [`docs/access-control.md`](./docs/access-control.md)
 - Board/security FAQ: [`docs/faq.md`](./docs/faq.md)
 

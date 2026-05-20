@@ -2,24 +2,29 @@ owner: jetta-operating
 repo: status.jettaintelligence.com
 
 sites:
+  # Jetta websites and identity surfaces.
   - name: Jetta Intelligence Website
     url: https://jettaintelligence.com
   - name: Jetta Operating Website
     url: https://jettaoperating.com
+  - name: Jetta Login
+    url: https://login.jettaintelligence.com
+
+  # AIC and Jetta-managed application surfaces.
   - name: AIC Holdings Website
     url: https://aicholdings.com
-  - name: Greenmark Website
-    url: https://greenmarkwaste.com
-  - name: HT Disposal Website
-    url: https://htdisposal.com
   - name: Sable
     url: https://sable.aicholdings.com
   - name: Artemis
     url: https://artemis.jettaintelligence.com
   - name: Meridian
     url: https://meridian.aicholdings.com
-  - name: Jetta Login
-    url: https://login.jettaintelligence.com
+
+  # Greenmark and Cerebro surfaces.
+  - name: Greenmark Website
+    url: https://greenmarkwaste.com
+  - name: HT Disposal Website
+    url: https://htdisposal.com
   - name: Cerebro Production Health
     url: https://cerebro.greenmark.jettaintelligence.com/api/health
   - name: Cerebro Staging Health
@@ -34,6 +39,8 @@ sites:
     expectedStatusCodes:
       - 200
       - 401
+
+  # Infrastructure vendors and control planes.
   - name: GitHub
     url: https://github.com
   - name: GitHub Status
@@ -52,6 +59,12 @@ sites:
     url: https://vercel.com
   - name: Vercel Status
     url: https://www.vercel-status.com/
+  - name: Supabase Status
+    url: https://status.supabase.com/
+
+  # AI vendor surfaces and public component-status APIs. The component API
+  # checks prove the vendor status feeds are reachable; they do not prove every
+  # individual model can serve an authenticated request.
   - name: OpenRouter
     url: https://openrouter.ai
   - name: OpenRouter API Models
@@ -65,6 +78,8 @@ sites:
       - 403
   - name: Claude Status All Services
     url: https://status.claude.com
+  - name: Claude Components API
+    url: https://status.claude.com/api/v2/components.json
   - name: Claude Console
     url: https://console.anthropic.com
   - name: Anthropic API Models
@@ -84,6 +99,8 @@ sites:
       - 401
   - name: OpenAI Status All Services
     url: https://status.openai.com
+  - name: OpenAI Components API
+    url: https://status.openai.com/api/v2/components.json
 
 status-website:
   cname: status.jettaintelligence.com
