@@ -102,9 +102,12 @@ sites:
 status-website:
   cname: status.jettaintelligence.com
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  themeUrl: https://status.jettaintelligence.com/jetta-status-theme.css
   name: Jetta Service Status
-  introTitle: Jetta Service Status
-  introMessage: External uptime and status checks for Jetta-managed services across Jetta Intelligence, AIC, and Greenmark. This page is powered by GitHub Actions and GitHub Pages, not Railway.
+  introTitle: "**Jetta Service Status**"
+  introMessage: Public uptime and dependency checks for the Jetta-managed operating stack across Jetta Intelligence, AIC, and Greenmark. Incidents are generated from GitHub Actions probes and published through GitHub Pages.
+  faviconSvg: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  css: "nav .logo div::after { content: 'Operating stack'; display: block; margin-top: 0.1rem; color: #cfd8d2; font-size: 0.72rem; font-weight: 500; letter-spacing: 0; }"
   navbar:
     - title: Status
       href: /
