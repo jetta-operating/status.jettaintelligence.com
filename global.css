@@ -386,10 +386,20 @@ article.down-active h3 {
   margin-top: 0;
   min-height: 168px;
   padding-bottom: 58px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .live-status article.graph {
   background-image: none !important;
+}
+
+.live-status article:hover {
+  border-color: rgba(62, 93, 136, 0.42);
+  box-shadow: 0 14px 34px rgba(16, 43, 82, 0.12);
+  transform: translateY(-1px);
 }
 
 .live-status article::before {
@@ -437,10 +447,26 @@ article.down-active h3 {
   background:
     repeating-linear-gradient(
       90deg,
-      #3e5d88 0 5px,
-      transparent 5px 8px
-    );
-  opacity: 0.92;
+      #3e5d88 0 4px,
+      rgba(62, 93, 136, 0.18) 4px 7px,
+      transparent 7px 9px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(149, 162, 179, 0.08));
+  opacity: 0.96;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.live-status article:hover::after {
+  border-color: rgba(62, 93, 136, 0.46);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.58),
+    0 6px 18px rgba(16, 43, 82, 0.12);
+  opacity: 1;
+  transform: translateY(-1px);
 }
 
 .live-status article > div:last-of-type::after {
@@ -453,6 +479,12 @@ article.down-active h3 {
   font-weight: 620;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  transition: color 160ms ease;
+}
+
+.live-status article:hover > div:last-of-type::after {
+  content: "Click service name for detail";
+  color: #102b52;
 }
 
 .live-status article.down::after,
@@ -461,9 +493,22 @@ article.down-active h3 {
   background:
     repeating-linear-gradient(
       90deg,
-      #9f4d2f 0 5px,
-      transparent 5px 8px
-    );
+      #9f4d2f 0 4px,
+      rgba(159, 77, 47, 0.18) 4px 7px,
+      transparent 7px 9px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(159, 77, 47, 0.08));
+}
+
+.live-status article.down:hover,
+.live-status article.down-active:hover {
+  border-color: rgba(159, 77, 47, 0.5);
+  box-shadow: 0 14px 34px rgba(159, 77, 47, 0.14);
+}
+
+.live-status article.down:hover > div:last-of-type::after,
+.live-status article.down-active:hover > div:last-of-type::after {
+  color: #7d3c25;
 }
 
 .live-status article.degraded::after {
@@ -471,9 +516,20 @@ article.down-active h3 {
   background:
     repeating-linear-gradient(
       90deg,
-      #b6763f 0 5px,
-      transparent 5px 8px
-    );
+      #b6763f 0 4px,
+      rgba(182, 118, 63, 0.2) 4px 7px,
+      transparent 7px 9px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(182, 118, 63, 0.08));
+}
+
+.live-status article.degraded:hover {
+  border-color: rgba(182, 118, 63, 0.5);
+  box-shadow: 0 14px 34px rgba(182, 118, 63, 0.14);
+}
+
+.live-status article.degraded:hover > div:last-of-type::after {
+  color: #7a4b22;
 }
 
 .live-status h4 {
@@ -536,3 +592,4 @@ footer {
   }
 }
 
+/* End Jetta status theme */
