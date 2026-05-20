@@ -129,6 +129,55 @@ Recommended path:
 This gives an easy user experience now and leaves a clear path to stronger
 privacy later.
 
+## Can Codex set up Cloudflare itself?
+
+Yes, if Codex has a Cloudflare API token with the right scopes.
+
+This repo now has an idempotent setup script:
+
+```bash
+CLOUDFLARE_API_TOKEN=... tools/configure_cloudflare_access.py --apply
+```
+
+The script configures the lowest-friction security shape:
+
+- DNS record for `status.jettaintelligence.com` proxied through Cloudflare,
+- Cloudflare Access self-hosted application for the status hostname,
+- reusable allow policy for approved email domains,
+- one-week session duration for a low-friction operator experience.
+
+The script does not print the token. It refuses to mutate anything unless
+`--apply` is passed.
+
+## What should the initial Cloudflare Access policy allow?
+
+Start small.
+
+The repo automation defaults to these email domains:
+
+- `jettaintelligence.com`
+- `aicholdings.com`
+- `greenmarkwaste.com`
+
+For tighter control, run the script with explicit domains or edit the policy in
+Cloudflare to use named email addresses instead. A named-email policy is
+stricter; a domain policy is easier to operate.
+
+## How do we know Cloudflare Access is actually protecting it?
+
+Run:
+
+```bash
+tools/configure_cloudflare_access.py --verify-only
+curl -sSI https://status.jettaintelligence.com/ | sed -n '1,20p'
+```
+
+Good signal: the public request is redirected or blocked by Cloudflare Access
+before the page content loads.
+
+Bad signal: the public request returns `HTTP/2 200` with `server: GitHub.com`.
+That means the status page is still public at the custom hostname.
+
 ## References
 
 - Access-control decision note: [`access-control.md`](./access-control.md)

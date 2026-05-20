@@ -5,6 +5,23 @@
 Do not use a client-side password gate as the security boundary for this
 status site.
 
+## Current implementation state
+
+As of 2026-05-20, this repo has automation for the Cloudflare setup at
+`tools/configure_cloudflare_access.py`, but the live hostname is not proven
+gated until the verification command below shows a Cloudflare Access redirect
+or block.
+
+Current observed public behavior before the Cloudflare gate is applied:
+
+- `status.jettaintelligence.com` is a CNAME to `jetta-operating.github.io`.
+- `https://status.jettaintelligence.com/` returns `200` from GitHub Pages.
+- The GitHub repository is public.
+
+That means Cloudflare Access can protect the custom hostname once DNS is
+proxied, but it does not by itself make the public GitHub repository or raw
+GitHub history undiscoverable.
+
 The status site is an Upptime static site. Upptime's generated website loads
 status data from the GitHub repository and raw GitHub content at runtime. That
 means any password check implemented only in browser JavaScript can hide the
@@ -108,19 +125,54 @@ Use this rule before adding sensitive content:
 ## Implementation checklist for Cloudflare Access
 
 1. Confirm Cloudflare manages DNS for `jettaintelligence.com`.
-2. Change `status.jettaintelligence.com` from DNS-only to proxied if required by
-   the Access setup.
-3. Create a Cloudflare Access self-hosted application for
-   `https://status.jettaintelligence.com`.
-4. Add an allow policy for approved emails, approved domains, or an identity
-   group.
-5. Enable one-time PIN or the chosen identity provider.
-6. Test from an incognito browser:
+2. Supply an API token with:
+   - `Zone:DNS:Edit` for `jettaintelligence.com`,
+   - `Zone:Zone:Read` for `jettaintelligence.com`,
+   - `Access: Apps and Policies: Edit` for the Cloudflare account.
+3. Dry-run the repo automation:
+   ```bash
+   CLOUDFLARE_API_TOKEN=... tools/configure_cloudflare_access.py
+   ```
+4. Apply the repo automation:
+   ```bash
+   CLOUDFLARE_API_TOKEN=... tools/configure_cloudflare_access.py --apply
+   ```
+5. Confirm `status.jettaintelligence.com` is proxied through Cloudflare.
+6. Confirm the Access self-hosted application exists for
+   `status.jettaintelligence.com`.
+7. Confirm the reusable allow policy includes the approved email domains or
+   individual emails. The automation default is:
+   - `jettaintelligence.com`,
+   - `aicholdings.com`,
+   - `greenmarkwaste.com`.
+8. Enable one-time PIN or the chosen identity provider.
+9. Test from an incognito browser:
    - page does not load before auth,
    - approved user can enter,
    - unapproved user is blocked,
    - static assets and history links are also protected.
-7. Re-test `https://status.jettaintelligence.com/history/<slug>/` deep links.
+10. Re-test `https://status.jettaintelligence.com/history/<slug>/` deep links.
+
+## Verification commands
+
+Run these after applying Cloudflare Access:
+
+```bash
+tools/configure_cloudflare_access.py --verify-only
+curl -sSI https://status.jettaintelligence.com/ | sed -n '1,20p'
+curl -sSI https://status.jettaintelligence.com/history/jetta-intelligence-website/ | sed -n '1,20p'
+dig +short status.jettaintelligence.com CNAME
+```
+
+Expected signal:
+
+- The public `curl` should not return the GitHub Pages `200` body directly.
+- The response should be a Cloudflare Access redirect/block such as a `302`
+  with a `/cdn-cgi/access/` location, or a Cloudflare-managed `403`.
+- Deep links under `/history/.../` should be gated the same way as `/`.
+
+If the public URL still returns `HTTP/2 200` from `server: GitHub.com`, the
+custom domain is not yet protected.
 
 ## References
 
