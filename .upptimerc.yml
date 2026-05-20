@@ -4,12 +4,36 @@ repo: status.jettaintelligence.com
 sites:
   - name: Jetta Intelligence Website
     url: https://jettaintelligence.com
+  - name: Jetta Operating Website
+    url: https://jettaoperating.com
   - name: AIC Holdings Website
     url: https://aicholdings.com
   - name: Greenmark Website
     url: https://greenmarkwaste.com
   - name: HT Disposal Website
     url: https://htdisposal.com
+  - name: Sable
+    url: https://sable.aicholdings.com
+  - name: Sable Data
+    url: https://sable-data.jettaintelligence.com
+  - name: Artemis
+    url: https://artemis.jettaintelligence.com
+  - name: Robin Meridian Chat
+    url: https://chat.jettaintelligence.com
+  - name: Anthraseek
+    url: https://anthraseek.vercel.app
+  - name: Whisper
+    url: https://whisper.jettaintelligence.com
+  - name: Meridian
+    url: https://meridian.aicholdings.com
+  - name: AICync
+    url: https://cync.aicholdings.com
+  - name: Helm
+    url: https://jetta-helm.vercel.app
+  - name: Data Orchestration
+    url: https://data.jettaintelligence.com
+  - name: Jetta Login
+    url: https://login.jettaintelligence.com
   - name: Cerebro Production Health
     url: https://cerebro.greenmark.jettaintelligence.com/api/health
   - name: Cerebro Staging Health
@@ -24,6 +48,10 @@ sites:
     expectedStatusCodes:
       - 200
       - 401
+  - name: GitHub
+    url: https://github.com
+  - name: GitHub Status
+    url: https://www.githubstatus.com
   - name: Railway Control Plane
     url: https://backboard.railway.com/graphql/v2
     expectedStatusCodes:
@@ -34,6 +62,42 @@ sites:
       - 405
   - name: Railway Status Page
     url: https://status.railway.com/
+  - name: Vercel
+    url: https://vercel.com
+  - name: Vercel Status
+    url: https://www.vercel-status.com/
+  - name: OpenRouter
+    url: https://openrouter.ai
+  - name: OpenRouter API Models
+    url: https://openrouter.ai/api/v1/models
+  - name: OpenRouter Status
+    url: https://status.openrouter.ai
+  - name: Claude Web
+    url: https://claude.ai
+    expectedStatusCodes:
+      - 200
+      - 403
+  - name: Claude Status All Services
+    url: https://status.claude.com
+  - name: Claude Console
+    url: https://console.anthropic.com
+  - name: Anthropic API Models
+    url: https://api.anthropic.com/v1/models
+    expectedStatusCodes:
+      - 200
+      - 401
+  - name: ChatGPT Web
+    url: https://chatgpt.com
+    expectedStatusCodes:
+      - 200
+      - 403
+  - name: OpenAI API Models
+    url: https://api.openai.com/v1/models
+    expectedStatusCodes:
+      - 200
+      - 401
+  - name: OpenAI Status All Services
+    url: https://status.openai.com
 
 status-website:
   cname: status.jettaintelligence.com
