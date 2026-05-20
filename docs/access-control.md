@@ -40,6 +40,25 @@ happen before the content is served.
 
 Use Cloudflare Access in front of `status.jettaintelligence.com`.
 
+## Relationship to `login.jettaintelligence.com`
+
+`login.jettaintelligence.com` is the Access administration/control-plane app.
+It is not the identity provider and status traffic should not be routed through
+it.
+
+The intended architecture is:
+
+- Cloudflare Access authenticates users for `status.jettaintelligence.com`.
+- Cloudflare Access authenticates admins for `login.jettaintelligence.com`.
+- `login.jettaintelligence.com` reads and explains Access inventory and policy
+  state.
+- Status content is served directly from GitHub Pages behind Cloudflare Access.
+
+So when a user opens `https://status.jettaintelligence.com`, the browser should
+go to Cloudflare's Access login page for **Jetta Service Status**, not to the
+login admin app. Both hostnames should stay as separate Access applications
+under the same Cloudflare team and the same intended identity policy.
+
 Preferred user experience:
 
 1. User opens `https://status.jettaintelligence.com`.

@@ -6,6 +6,9 @@ External status page for Jetta-managed services and critical vendor dependencies
 - Status repo: https://github.com/jetta-operating/status.jettaintelligence.com
 - Runtime: GitHub Actions + GitHub Pages via Upptime
 - Access: Cloudflare Access protects the custom hostname before content loads
+- Identity model: users log in through the same Cloudflare Access team used by
+  `login.jettaintelligence.com`; the login admin app is the control plane, not
+  a separate identity provider
 - Railway dependency: monitored by this repo, not used to host this status plane
 - Vendor dependencies: Vercel, OpenRouter, Claude/Anthropic, OpenAI/ChatGPT, Supabase, GitHub, and Railway
 - Theme: Jetta-branded Upptime theme in [`assets/jetta-status-theme.css`](./assets/jetta-status-theme.css)
@@ -69,4 +72,7 @@ This repo intentionally monitors only public, non-secret health surfaces. Do not
 - Incidents are tracked as GitHub Issues.
 - The custom domain uses a proxied Cloudflare DNS `CNAME` for `status.jettaintelligence.com` pointing at GitHub Pages as the origin.
 - Verify the access gate with `tools/configure_cloudflare_access.py --verify-only --strict`.
+- `login.jettaintelligence.com` is the Access administration surface. Do not
+  route status traffic through that app; both hostnames should be separate
+  Cloudflare Access applications governed by the same intended identity policy.
 - The org blocks default workflow write permissions; this repo uses a `GH_PAT` Actions secret. The token must include `repo` for status commits and `workflow` before running Upptime template-update automation.
