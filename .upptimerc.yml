@@ -14,24 +14,10 @@ sites:
     url: https://htdisposal.com
   - name: Sable
     url: https://sable.aicholdings.com
-  - name: Sable Data
-    url: https://sable-data.jettaintelligence.com
   - name: Artemis
     url: https://artemis.jettaintelligence.com
-  - name: Robin Meridian Chat
-    url: https://chat.jettaintelligence.com
-  - name: Anthraseek
-    url: https://anthraseek.vercel.app
-  - name: Whisper
-    url: https://whisper.jettaintelligence.com
   - name: Meridian
     url: https://meridian.aicholdings.com
-  - name: AICync
-    url: https://cync.aicholdings.com
-  - name: Helm
-    url: https://jetta-helm.vercel.app
-  - name: Data Orchestration
-    url: https://data.jettaintelligence.com
   - name: Jetta Login
     url: https://login.jettaintelligence.com
   - name: Cerebro Production Health
