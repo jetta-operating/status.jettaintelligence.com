@@ -1,0 +1,62 @@
+owner: jetta-operating
+repo: status.jettaintelligence.com
+
+sites:
+  - name: Jetta Intelligence Website
+    url: https://jettaintelligence.com
+  - name: AIC Holdings Website
+    url: https://aicholdings.com
+  - name: Greenmark Website
+    url: https://greenmarkwaste.com
+  - name: HT Disposal Website
+    url: https://htdisposal.com
+  - name: Cerebro Production Health
+    url: https://cerebro.greenmark.jettaintelligence.com/api/health
+  - name: Cerebro Staging Health
+    url: https://staging-cerebro-greenmark.jettaintelligence.com/api/health
+  - name: Cerebro QA Site
+    url: https://qa.cerebro.greenmark.jettaintelligence.com
+    expectedStatusCodes:
+      - 200
+      - 302
+  - name: Supabase Production Auth Health
+    url: https://wwmcgtyngnziepeynccz.supabase.co/auth/v1/health
+    expectedStatusCodes:
+      - 200
+      - 401
+  - name: Railway Control Plane
+    url: https://backboard.railway.com/graphql/v2
+    expectedStatusCodes:
+      - 200
+      - 400
+      - 401
+      - 403
+      - 405
+  - name: Railway Status Page
+    url: https://status.railway.com/
+
+status-website:
+  cname: status.jettaintelligence.com
+  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  name: Jetta Service Status
+  introTitle: Jetta Service Status
+  introMessage: External uptime and status checks for Jetta-managed services across Jetta Intelligence, AIC, and Greenmark. This page is powered by GitHub Actions and GitHub Pages, not Railway.
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  updateTemplate: "0 0 * * 0"
+  updates: "0 3 * * *"
+  uptime: "*/15 * * * *"
+
+assignees:
+  - dshanklin-bv
+
+skipDeleteIssues: true
