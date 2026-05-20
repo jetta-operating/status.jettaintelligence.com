@@ -35,6 +35,10 @@ def main() -> None:
             "href=https://status.jettaintelligence.com/global.css",
             "href=/global.css",
         )
+        html = html.replace(
+            "href=https://status.jettaintelligence.com/jetta-status-theme.css",
+            "href=/jetta-status-theme.css",
+        )
         html_path.write_text(html)
 
 
