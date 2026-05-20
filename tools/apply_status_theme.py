@@ -13,6 +13,7 @@ SERVICE_WORKER = EXPORT_DIR / "service-worker.js"
 INDEX_HTML = EXPORT_DIR / "index.html"
 SOURCE_SUMMARY = Path("history/summary.json")
 MARKER = "/* Jetta status theme */"
+END_MARKER = "/* End Jetta status theme */"
 SERVICE_WORKER_RESET = """
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -45,8 +46,24 @@ def main() -> None:
     shutil.copyfile(THEME_SOURCE, THEME_TARGET)
 
     global_css = GLOBAL_CSS.read_text()
-    if MARKER not in global_css:
-        GLOBAL_CSS.write_text(f"{global_css.rstrip()}\n\n{MARKER}\n{theme}\n")
+    theme_block = f"{MARKER}\n{theme}\n{END_MARKER}"
+    if MARKER in global_css and END_MARKER in global_css:
+        global_css = re.sub(
+            rf"{re.escape(MARKER)}.*?{re.escape(END_MARKER)}",
+            theme_block,
+            global_css,
+            flags=re.S,
+        )
+    elif MARKER in global_css:
+        global_css = re.sub(
+            rf"{re.escape(MARKER)}.*",
+            theme_block,
+            global_css,
+            flags=re.S,
+        )
+    else:
+        global_css = f"{global_css.rstrip()}\n\n{theme_block}\n"
+    GLOBAL_CSS.write_text(global_css)
 
     SERVICE_WORKER.write_text(f"{SERVICE_WORKER_RESET}\n")
 
@@ -72,8 +89,16 @@ def main() -> None:
             "href=https://status.jettaintelligence.com",
             "href=/",
         )
-        if "id=\"jetta-critical-theme\"" not in html:
-            inline_theme = f"<style id=\"jetta-critical-theme\">{theme}</style>"
+        inline_theme = f"<style id=\"jetta-critical-theme\">{theme}</style>"
+        if "id=\"jetta-critical-theme\"" in html:
+            html = re.sub(
+                r"<style id=\"jetta-critical-theme\">.*?</style>",
+                inline_theme,
+                html,
+                count=1,
+                flags=re.S,
+            )
+        else:
             html = re.sub(r"</head>", f"{inline_theme}</head>", html, count=1)
         html_path.write_text(html)
 
