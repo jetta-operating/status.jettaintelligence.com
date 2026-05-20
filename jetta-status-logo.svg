@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Jetta status logo</title>
+  <defs>
+    <linearGradient id="roof" x1="144" y1="116" x2="380" y2="310" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#95a2b3"/>
+      <stop offset="0.72" stop-color="#3e5d88"/>
+      <stop offset="1" stop-color="#102b52"/>
+    </linearGradient>
+    <linearGradient id="base" x1="72" y1="304" x2="448" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d7dde5"/>
+      <stop offset="0.54" stop-color="#b7c1ce"/>
+      <stop offset="1" stop-color="#95a2b3"/>
+    </linearGradient>
+    <linearGradient id="j" x1="252" y1="190" x2="240" y2="412" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.64" stop-color="#f4f4f4"/>
+      <stop offset="1" stop-color="#b8b8b8"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#roof)" d="M110 306 256 158l146 148H110Z"/>
+  <path fill="#102b52" opacity=".45" d="M256 158 402 306h-55L238 195c-8-8-8-21 0-29 5-5 12-8 18-8Z"/>
+  <path fill="url(#base)" d="M72 302h368c19 0 29 23 16 36l-64 64H120l-64-64c-13-13-3-36 16-36Z"/>
+  <path fill="#ffffff" opacity=".58" d="M92 302h302l22 22H70c-2-10 6-22 22-22Z"/>
+  <path fill="url(#j)" d="M228 206h86v26h-20c-15 0-27 12-27 27v111c0 55-34 91-86 103 28-25 36-52 36-91V259c0-15-12-27-27-27h-20v-26h58Z"/>
+  <path fill="#ffffff" opacity=".68" d="M195 206h119v10H195v-10Z"/>
+</svg>
