@@ -158,11 +158,85 @@ article.down-active h3 {
 }
 
 .live-status article {
+  position: relative;
+  overflow: hidden;
   margin-top: 0;
-  min-height: 118px;
+  min-height: 168px;
+  padding-bottom: 58px;
+}
+
+.live-status article::before {
+  content: "Operational";
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 2;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid rgba(47, 125, 87, 0.18);
+  border-radius: 999px;
+  background: rgba(47, 125, 87, 0.09);
+  color: #255f45;
+  font-size: 0.72rem;
+  font-weight: 680;
+  line-height: 1;
+}
+
+.live-status article.down::before,
+.live-status article.down-active::before {
+  content: "Action needed";
+  border-color: rgba(180, 58, 50, 0.25);
+  background: rgba(180, 58, 50, 0.1);
+  color: #8d2822;
+}
+
+.live-status article.degraded::before {
+  content: "Degraded";
+  border-color: rgba(200, 148, 47, 0.3);
+  background: rgba(200, 148, 47, 0.12);
+  color: #7a5418;
+}
+
+.live-status article::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  height: 32px;
+  border: 1px solid rgba(47, 125, 87, 0.16);
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #2f7d57 0 5px,
+      transparent 5px 8px
+    );
+  opacity: 0.92;
+}
+
+.live-status article.down::after,
+.live-status article.down-active::after {
+  border-color: rgba(180, 58, 50, 0.22);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b43a32 0 5px,
+      transparent 5px 8px
+    );
+}
+
+.live-status article.degraded::after {
+  border-color: rgba(200, 148, 47, 0.28);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #c8942f 0 5px,
+      transparent 5px 8px
+    );
 }
 
 .live-status h4 {
+  max-width: calc(100% - 7.5rem);
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -171,6 +245,15 @@ article.down-active h3 {
 
 .live-status p {
   color: #56655c;
+}
+
+.live-status article .graph {
+  display: none;
+}
+
+.live-status article svg,
+.live-status article img {
+  max-width: 100%;
 }
 
 .r label {

@@ -1,4 +1,302 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <base href=/ > <link href=manifest.json rel=manifest crossorigin=use-credentials> <script>__SAPPER__={baseUrl:"",preloaded:[void 0]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.904aabfe.js"}catch(e){main="/client/legacy/client.1d1268d8.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=client/client-31a52aa5.css rel=stylesheet><link href=client/createOctokit-a85f76c7.css rel=stylesheet><link href=client/index-b0b6455a.css rel=stylesheet> <link href=/jetta-status-theme.css rel=stylesheet><link href=/global.css rel=stylesheet><link href=https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg rel=icon type=image/svg><link href=/logo-192.png rel=icon type=image/png><style>nav .logo div::after{content:'Operating stack';display:block;margin-top:.1rem;color:#cfd8d2;font-size:.72rem;font-weight:500;letter-spacing:0}</style> <link href=/client/client.904aabfe.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-31a52aa5.css rel=preload as=style><link href=/client/index.f0221c32.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/createOctokit.eb8918ea.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/createOctokit-a85f76c7.css rel=preload as=style><link href=/client/index-b0b6455a.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-a08hsz><div class="svelte-a08hsz container"><div><a href=https://status.jettaintelligence.com class="svelte-a08hsz logo"><img alt="" class=svelte-a08hsz src=https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg> <div>Jetta Service Status</div></a></div> <ul class=svelte-a08hsz><li><a href=/ class=svelte-a08hsz target=_self>Status</a> <li><a href=https://github.com/jetta-operating/status.jettaintelligence.com class=svelte-a08hsz target=_self>GitHub</a> </li> </ul></div> </nav> <main class=container></main> <footer class=svelte-jbr799><p>This page is <a href=https://github.com/jetta-operating/status.jettaintelligence.com>open source</a>, powered by <a href=https://upptime.js.org>Upptime</a></p> </footer></div> <script> try {
+<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <base href=/ > <link href=manifest.json rel=manifest crossorigin=use-credentials> <script>__SAPPER__={baseUrl:"",preloaded:[void 0]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.fc70b3fd.js"}catch(e){main="/client/legacy/client.fe89792d.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=client/client-31a52aa5.css rel=stylesheet><link href=client/createOctokit-a85f76c7.css rel=stylesheet><link href=client/index-b0b6455a.css rel=stylesheet> <script>// If `prefers-color-scheme` is not supported, fall back to light mode.
+      // In this case, light.css will be downloaded with `highest` priority.
+      if (typeof window !== "undefined" && typeof document !== "undefined" && "matchMedia" in window && window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+        document.documentElement.style.display = 'none';
+        document.head.insertAdjacentHTML(
+          'beforeend',
+          '<link rel="stylesheet" href={`${config.path}/themes/light.css`} onload="document.documentElement.style.display = \'\'">',
+        );
+      } </script> <link href=/themes/light.css rel=stylesheet media=(prefers-color-scheme:light)> <link href=/themes/dark.css rel=stylesheet media=(prefers-color-scheme:dark)><link href=/global.css rel=stylesheet><link href=https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg rel=icon type=image/svg><link href=/logo-192.png rel=icon type=image/png><style>nav .logo div::after{content:'Operating stack';display:block;margin-top:.1rem;color:#cfd8d2;font-size:.72rem;font-weight:500;letter-spacing:0}</style> <link href=/client/client.fc70b3fd.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-31a52aa5.css rel=preload as=style><link href=/client/index.ee5b57b7.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/createOctokit.0edd2176.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/createOctokit-a85f76c7.css rel=preload as=style><link href=/client/index-b0b6455a.css rel=preload as=style><style id="jetta-critical-theme">:root {
+  --body-background-color: #f5f6ef;
+  --body-text-color: #17211d;
+  --card-background-color: #ffffff;
+  --card-border-color: #d9ded5;
+  --nav-background-color: #17211d;
+  --nav-border-bottom-color: #17211d;
+  --nav-current-border-bottom-color: #d7a947;
+  --code-color: #17211d;
+  --code-background-color: #ecefe8;
+  --up-border-left-color: #2f7d57;
+  --up-color-color: #17211d;
+  --down-border-left-color: #b43a32;
+  --down-color-color: #17211d;
+  --down-background-color: #fff6f4;
+  --degraded-border-left-color: #c8942f;
+  --degraded-color-color: #17211d;
+  --tag-color: #ffffff;
+  --tag-up-background-color: #2f7d57;
+  --tag-down-background-color: #b43a32;
+  --tag-degraded-background-color: #c8942f;
+  --change-background-color: #fff7df;
+  --error-button-border-color: #b43a32;
+  --error-button-background-color: #b43a32;
+  --error-button-color: #ffffff;
+  --submit-button-background-color: #2f7d57;
+  --submit-button-color: #ffffff;
+  --submit-button-border-color: #2f7d57;
+  --graph-opacity: 0.24;
+  --graph-filter: saturate(0.8);
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(23, 33, 29, 0.06), rgba(246, 247, 241, 0) 18rem),
+    linear-gradient(90deg, rgba(47, 125, 87, 0.07), rgba(215, 169, 71, 0.06));
+}
+
+.container {
+  max-width: 1120px;
+}
+
+nav {
+  color: #f7f5ea;
+  box-shadow: 0 1px 0 rgba(23, 33, 29, 0.18);
+}
+
+nav .container {
+  min-height: 68px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav img {
+  filter: brightness(0) invert(1);
+}
+
+header {
+  position: relative;
+  margin: 2rem 0 1.25rem;
+  padding: 2.4rem;
+  border: 1px solid #d9ded5;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(23, 33, 29, 0.96), rgba(32, 67, 51, 0.94)),
+    #17211d;
+  color: #fbfaf1;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: 26rem;
+  height: 26rem;
+  border: 1px solid rgba(215, 169, 71, 0.32);
+  transform: rotate(18deg);
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(2.1rem, 5vw, 4.4rem);
+  font-weight: 740;
+  line-height: 0.98;
+}
+
+h2 {
+  margin-top: 2.4rem;
+  font-size: 1.05rem;
+  font-weight: 740;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.95rem;
+  font-weight: 680;
+}
+
+h4 {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+p.lead {
+  max-width: 760px;
+  color: #dfe7df;
+  font-size: 1.08rem;
+}
+
+article {
+  border: 1px solid #d9ded5;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(23, 33, 29, 0.055);
+}
+
+article + article {
+  margin-top: 0.65rem;
+}
+
+article.down-active {
+  border-color: rgba(180, 58, 50, 0.38);
+  box-shadow: 0 12px 30px rgba(180, 58, 50, 0.10);
+}
+
+.svelte-8lnl4f article.down-active,
+main > section:first-of-type article {
+  background: #fff8f6;
+}
+
+main > section:first-of-type h3,
+article.down-active h3 {
+  color: #8d2822;
+}
+
+.live-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.live-status article {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+  min-height: 168px;
+  padding-bottom: 58px;
+}
+
+.live-status article::before {
+  content: "Operational";
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  z-index: 2;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid rgba(47, 125, 87, 0.18);
+  border-radius: 999px;
+  background: rgba(47, 125, 87, 0.09);
+  color: #255f45;
+  font-size: 0.72rem;
+  font-weight: 680;
+  line-height: 1;
+}
+
+.live-status article.down::before,
+.live-status article.down-active::before {
+  content: "Action needed";
+  border-color: rgba(180, 58, 50, 0.25);
+  background: rgba(180, 58, 50, 0.1);
+  color: #8d2822;
+}
+
+.live-status article.degraded::before {
+  content: "Degraded";
+  border-color: rgba(200, 148, 47, 0.3);
+  background: rgba(200, 148, 47, 0.12);
+  color: #7a5418;
+}
+
+.live-status article::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  height: 32px;
+  border: 1px solid rgba(47, 125, 87, 0.16);
+  border-radius: 6px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #2f7d57 0 5px,
+      transparent 5px 8px
+    );
+  opacity: 0.92;
+}
+
+.live-status article.down::after,
+.live-status article.down-active::after {
+  border-color: rgba(180, 58, 50, 0.22);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b43a32 0 5px,
+      transparent 5px 8px
+    );
+}
+
+.live-status article.degraded::after {
+  border-color: rgba(200, 148, 47, 0.28);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #c8942f 0 5px,
+      transparent 5px 8px
+    );
+}
+
+.live-status h4 {
+  max-width: calc(100% - 7.5rem);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #17211d;
+}
+
+.live-status p {
+  color: #56655c;
+}
+
+.live-status article .graph {
+  display: none;
+}
+
+.live-status article svg,
+.live-status article img {
+  max-width: 100%;
+}
+
+.r label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 0.7rem;
+  border: 1px solid #d9ded5;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #526158;
+  font-size: 0.88rem;
+}
+
+.r input:checked + label {
+  border-color: #17211d;
+  background: #17211d;
+  color: #ffffff;
+}
+
+footer {
+  color: #6c786f;
+}
+
+@media (max-width: 720px) {
+  header {
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  .live-status {
+    grid-template-columns: 1fr;
+  }
+}
+</style></head> <body> <div id=sapper> <nav class=svelte-a08hsz><div class="svelte-a08hsz container"><div><a href=/ class="svelte-a08hsz logo"><img alt="" class=svelte-a08hsz src=https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg> <div>Jetta Service Status</div></a></div> <ul class=svelte-a08hsz><li><a href=/ class=svelte-a08hsz target=_self>Status</a> <li><a href=https://github.com/jetta-operating/status.jettaintelligence.com class=svelte-a08hsz target=_self>GitHub</a> </li> </ul></div> </nav> <main class=container></main> <footer class=svelte-jbr799><p>This page is <a href=https://github.com/jetta-operating/status.jettaintelligence.com>open source</a>, powered by <a href=https://upptime.js.org>Upptime</a></p> </footer></div> <script> try {
         if (typeof window !== "undefined" && window.navigator && navigator.serviceWorker) {
           navigator.serviceWorker.getRegistrations().then(function (registrations) {
             for (let registration of registrations) {
