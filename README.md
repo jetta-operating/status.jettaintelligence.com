@@ -23,3 +23,4 @@ This repo intentionally monitors only public, non-secret health surfaces. Do not
 - Response time, graph, summary, and static site workflows can be run manually from GitHub Actions.
 - Incidents are tracked as GitHub Issues.
 - The custom domain requires a DNS `CNAME` for `status.jettaintelligence.com` pointing at GitHub Pages.
+- The org blocks default workflow write permissions; this repo uses a `GH_PAT` Actions secret. The token must include `repo` for status commits and `workflow` before running Upptime template-update automation.
