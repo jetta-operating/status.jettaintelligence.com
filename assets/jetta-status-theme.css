@@ -1,5 +1,5 @@
 :root {
-  --body-background-color: #f6f7f1;
+  --body-background-color: #f5f6ef;
   --body-text-color: #17211d;
   --card-background-color: #ffffff;
   --card-border-color: #d9ded5;
@@ -46,7 +46,7 @@ body::before {
 }
 
 .container {
-  max-width: 1080px;
+  max-width: 1120px;
 }
 
 nav {
@@ -67,12 +67,37 @@ nav img {
 }
 
 header {
-  padding: 3rem 0 1.5rem;
+  position: relative;
+  margin: 2rem 0 1.25rem;
+  padding: 2.4rem;
+  border: 1px solid #d9ded5;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(23, 33, 29, 0.96), rgba(32, 67, 51, 0.94)),
+    #17211d;
+  color: #fbfaf1;
+  overflow: hidden;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  right: -8rem;
+  bottom: -10rem;
+  width: 26rem;
+  height: 26rem;
+  border: 1px solid rgba(215, 169, 71, 0.32);
+  transform: rotate(18deg);
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
   max-width: 760px;
-  font-size: clamp(2.2rem, 6vw, 4.8rem);
+  font-size: clamp(2.1rem, 5vw, 4.4rem);
   font-weight: 740;
   line-height: 0.98;
 }
@@ -97,13 +122,14 @@ h4 {
 
 p.lead {
   max-width: 760px;
-  color: #526158;
+  color: #dfe7df;
   font-size: 1.08rem;
 }
 
 article {
+  border: 1px solid #d9ded5;
   border-radius: 8px;
-  box-shadow: 0 12px 30px rgba(23, 33, 29, 0.06);
+  box-shadow: 0 10px 24px rgba(23, 33, 29, 0.055);
 }
 
 article + article {
@@ -111,18 +137,40 @@ article + article {
 }
 
 article.down-active {
+  border-color: rgba(180, 58, 50, 0.38);
   box-shadow: 0 12px 30px rgba(180, 58, 50, 0.10);
+}
+
+.svelte-8lnl4f article.down-active,
+main > section:first-of-type article {
+  background: #fff8f6;
+}
+
+main > section:first-of-type h3,
+article.down-active h3 {
+  color: #8d2822;
 }
 
 .live-status {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.75rem;
 }
 
 .live-status article {
   margin-top: 0;
-  min-height: 112px;
+  min-height: 118px;
+}
+
+.live-status h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #17211d;
+}
+
+.live-status p {
+  color: #56655c;
 }
 
 .r label {
@@ -145,4 +193,15 @@ article.down-active {
 
 footer {
   color: #6c786f;
+}
+
+@media (max-width: 720px) {
+  header {
+    margin-top: 1rem;
+    padding: 1.5rem;
+  }
+
+  .live-status {
+    grid-template-columns: 1fr;
+  }
 }
