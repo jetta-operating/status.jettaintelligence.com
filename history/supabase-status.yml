@@ -1,7 +1,7 @@
 url: https://status.supabase.com/
-status: down
-code: 405
-responseTime: 15
-lastUpdated: 2026-06-03T05:24:55.428Z
+status: up
+code: 200
+responseTime: 287
+lastUpdated: 2026-06-03T10:17:46.592Z
 startTime: 2026-05-20T13:57:14.934Z
 generator: Upptime <https://github.com/upptime/upptime>
