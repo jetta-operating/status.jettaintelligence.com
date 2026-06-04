@@ -1,7 +1,7 @@
 url: https://api.anthropic.com/v1/models
 status: up
 code: 401
-responseTime: 46
-lastUpdated: 2026-06-03T01:44:20.135Z
+responseTime: 120
+lastUpdated: 2026-06-04T01:46:59.891Z
 startTime: 2026-05-20T03:25:33.120Z
 generator: Upptime <https://github.com/upptime/upptime>
