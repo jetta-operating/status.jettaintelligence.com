@@ -5,15 +5,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/jettaintelligence.com.ico",
     "slug": "jetta-intelligence-website",
     "status": "up",
-    "uptime": "99.91%",
+    "uptime": "99.92%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.91%",
+    "uptimeYear": "99.92%",
     "time": 311,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 384,
+    "timeMonth": 321,
     "timeYear": 311,
     "dailyMinutesDown": {
       "2026-07-02": 156
@@ -33,7 +33,7 @@
     "time": 519,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 536,
+    "timeMonth": 576,
     "timeYear": 519,
     "dailyMinutesDown": {}
   },
@@ -51,7 +51,7 @@
     "time": 285,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 342,
+    "timeMonth": 345,
     "timeYear": 285,
     "dailyMinutesDown": {}
   },
@@ -69,7 +69,7 @@
     "time": 393,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 420,
+    "timeMonth": 439,
     "timeYear": 393,
     "dailyMinutesDown": {}
   },
@@ -87,7 +87,7 @@
     "time": 532,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 1335,
+    "timeMonth": 1370,
     "timeYear": 532,
     "dailyMinutesDown": {}
   },
@@ -97,15 +97,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/artemis.jettaintelligence.com.ico",
     "slug": "artemis",
     "status": "up",
-    "uptime": "99.91%",
+    "uptime": "99.92%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "99.91%",
+    "uptimeYear": "99.92%",
     "time": 394,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 438,
+    "timeMonth": 318,
     "timeYear": 394,
     "dailyMinutesDown": {
       "2026-07-02": 155
@@ -125,7 +125,7 @@
     "time": 704,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 979,
+    "timeMonth": 1067,
     "timeYear": 704,
     "dailyMinutesDown": {}
   },
@@ -143,7 +143,7 @@
     "time": 397,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 459,
+    "timeMonth": 488,
     "timeYear": 397,
     "dailyMinutesDown": {}
   },
@@ -161,7 +161,7 @@
     "time": 394,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 444,
+    "timeMonth": 464,
     "timeYear": 394,
     "dailyMinutesDown": {}
   },
@@ -179,7 +179,7 @@
     "time": 890,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 985,
+    "timeMonth": 1051,
     "timeYear": 890,
     "dailyMinutesDown": {
       "2026-07-02": 154
@@ -199,7 +199,7 @@
     "time": 908,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 956,
+    "timeMonth": 982,
     "timeYear": 908,
     "dailyMinutesDown": {
       "2026-07-02": 153
@@ -219,7 +219,7 @@
     "time": 645,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 511,
+    "timeMonth": 541,
     "timeYear": 645,
     "dailyMinutesDown": {
       "2026-07-02": 152,
@@ -241,7 +241,7 @@
     "time": 73,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 79,
+    "timeMonth": 84,
     "timeYear": 73,
     "dailyMinutesDown": {}
   },
@@ -259,7 +259,7 @@
     "time": 181,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 177,
+    "timeMonth": 197,
     "timeYear": 181,
     "dailyMinutesDown": {
       "2026-07-09": 119,
@@ -280,7 +280,7 @@
     "time": 143,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 124,
+    "timeMonth": 120,
     "timeYear": 143,
     "dailyMinutesDown": {
       "2026-08-12": 78,
@@ -306,7 +306,7 @@
     "time": 130,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 123,
+    "timeMonth": 121,
     "timeYear": 130,
     "dailyMinutesDown": {}
   },
@@ -324,7 +324,7 @@
     "time": 126,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 126,
+    "timeMonth": 127,
     "timeYear": 126,
     "dailyMinutesDown": {}
   },
@@ -342,7 +342,7 @@
     "time": 148,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 146,
+    "timeMonth": 152,
     "timeYear": 148,
     "dailyMinutesDown": {}
   },
@@ -352,15 +352,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/www.vercel-status.com.ico",
     "slug": "vercel-status",
     "status": "up",
-    "uptime": "98.95%",
+    "uptime": "98.96%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.95%",
+    "uptimeYear": "98.96%",
     "time": 239,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 295,
+    "timeMonth": 291,
     "timeYear": 239,
     "dailyMinutesDown": {
       "2026-08-12": 78,
@@ -378,15 +378,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/status.supabase.com.ico",
     "slug": "supabase-status",
     "status": "up",
-    "uptime": "98.94%",
+    "uptime": "98.95%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.94%",
+    "uptimeYear": "98.95%",
     "time": 209,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 186,
+    "timeMonth": 191,
     "timeYear": 209,
     "dailyMinutesDown": {
       "2026-08-12": 78,
@@ -412,7 +412,7 @@
     "time": 140,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 114,
+    "timeMonth": 102,
     "timeYear": 140,
     "dailyMinutesDown": {}
   },
@@ -430,7 +430,7 @@
     "time": 93,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 66,
+    "timeMonth": 68,
     "timeYear": 93,
     "dailyMinutesDown": {}
   },
@@ -448,7 +448,7 @@
     "time": 259,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 288,
+    "timeMonth": 295,
     "timeYear": 259,
     "dailyMinutesDown": {}
   },
@@ -466,7 +466,7 @@
     "time": 51,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 51,
+    "timeMonth": 54,
     "timeYear": 51,
     "dailyMinutesDown": {}
   },
@@ -476,15 +476,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/status.claude.com.ico",
     "slug": "claude-status-all-services",
     "status": "up",
-    "uptime": "98.69%",
+    "uptime": "98.70%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.69%",
+    "uptimeYear": "98.70%",
     "time": 181,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 154,
+    "timeMonth": 158,
     "timeYear": 181,
     "dailyMinutesDown": {
       "2026-08-14": 471,
@@ -503,15 +503,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/status.claude.com.ico",
     "slug": "claude-components-api",
     "status": "up",
-    "uptime": "98.69%",
+    "uptime": "98.70%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.69%",
+    "uptimeYear": "98.70%",
     "time": 70,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 79,
+    "timeMonth": 76,
     "timeYear": 70,
     "dailyMinutesDown": {
       "2026-08-14": 471,
@@ -538,7 +538,7 @@
     "time": 338,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 333,
+    "timeMonth": 346,
     "timeYear": 338,
     "dailyMinutesDown": {}
   },
@@ -556,7 +556,7 @@
     "time": 91,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 113,
+    "timeMonth": 122,
     "timeYear": 91,
     "dailyMinutesDown": {}
   },
@@ -574,7 +574,7 @@
     "time": 61,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 41,
+    "timeMonth": 38,
     "timeYear": 61,
     "dailyMinutesDown": {}
   },
@@ -592,7 +592,7 @@
     "time": 265,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 77,
+    "timeMonth": 81,
     "timeYear": 265,
     "dailyMinutesDown": {}
   },
@@ -610,7 +610,7 @@
     "time": 600,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 770,
+    "timeMonth": 793,
     "timeYear": 600,
     "dailyMinutesDown": {}
   },
@@ -628,7 +628,7 @@
     "time": 225,
     "timeDay": 0,
     "timeWeek": 0,
-    "timeMonth": 237,
+    "timeMonth": 221,
     "timeYear": 225,
     "dailyMinutesDown": {}
   }
